@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LaundryController;
+use App\Http\Controllers\CarwashController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,48 +21,49 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/laundry_price_list', function () {
-    return view('admin.laundry_price_list');
-});
-Route::get('/account_details', function () {
+
+// ========search bar=======
+Route::get('/search-box', function () {
     return view('admin.account_details');
 });
-Route::get('/laundry_request_form', function () {
-    return view('admin.laundry_request_form');
-});
-Route::get('/car_wash_point', function () {
-    return view('admin.car_wash_point');
-});
-Route::get('/add_car_wash_booking', function () {
-    return view('admin.add_car_wash_booking');
-});
-Route::get('/car_wash_bookings', function () {
-    return view('admin.car_wash_bookings');
-});
-Route::get('/manage_enquiries', function () {
-    return view('admin.manage_enquiries');
-});
-Route::get('/reports', function () {
-    return view('admin.reports');
-});
-Route::get('/car_wash_overview', function () {
-    return view('admin.car_wash_overview');
-});
+// ========end search bar=======
 
 
-Route::get('/dashboard', function () {
-    if(Auth::user()->role_id == 1){
-        return view('admin.dashboard');
-    }
-    else{
-        return view('dashboard');
-    }
-})->middleware(['auth', 'verified'])->name('dashboard');
+// ========HomeController Routes=======
+Route::get('/dashboard', [HomeController::class, 'HomeIndex'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/account_details', [HomeController::class, 'Account']);
+Route::get('/reports', [HomeController::class, 'reports']);
+Route::get('/manage_enquiries',[HomeController::class, 'manage_enquiries']);
 
+// ========end HomeController Routes=======
+
+
+
+// ========LaundryController Routes=======
+Route::get('/laundry_price_list',[LaundryController::class, 'laundry_price_list']);
+Route::get('/laundry_request_form',[LaundryController::class, 'laundry_request_form']);
+Route::get('/laundry_price_list',[LaundryController::class, 'laundry_price_list']);
+Route::get('/laundry_new_item',[LaundryController::class, 'laundry_new_item']);
+
+// ========end LaundryController Routes=======
+
+
+
+// ========CarwashController Routes=======
+Route::get('/car_wash_point', [CarwashController::class, 'car_wash_point']);
+Route::get('/add_car_wash_booking', [CarwashController::class, 'add_car_wash_booking']);
+Route::get('/car_wash_bookings', [CarwashController::class, 'car_wash_bookings']);
+Route::get('/car_wash_overview', [CarwashController::class, 'car_wash_overview']);
+
+// ========end CarwashController Routes=======
+
+
+
+// ========Profile Settings=======
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+// ========end Profile Settings=======
 require __DIR__.'/auth.php';

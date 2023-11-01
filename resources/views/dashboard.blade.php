@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <div class="py-10" style="margin-top:20px;">
+    <div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div style="margin-top:25px;margin-bottom:15px;">
                 <h2 style="font-size:20px;"><a href="dashboard" style="font-size:20px;">Dashboard</a></h2>

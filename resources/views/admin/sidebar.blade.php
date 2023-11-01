@@ -1,95 +1,110 @@
 <nav>
 <!-- =============== Navigation ================ -->
-        <div class="navigation">
+        <div class="navigation" id="Sidebar">
             <ul>
                 <!-- ====logo === -->
                 <div class="company">
                      <h3 class="aqua">Aqua</h3>
                      <h3 class="clean">Clean</h3>
-                </div><br><br>
+                </div><br>
                 <br>
-                <li>
+                
                     <a href="dashboard">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
-                        <span class="title">Dashboard</span>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="home-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Dashboard</span>
+                        </li>
                     </a>
-                </li>
+                
 
-                <li>
+                
                     <a href="laundry_request_form">
-                        <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </span>
-                        <span class="title">Laundry Request</span>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="document-text-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Laundry Request</span>
+                        </li>
                     </a>
-                </li>
+                
 
-                <li>
+                
                     <a href="laundry_price_list">
-                        <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </span>
-                        <span class="title">Laundry Price List</span>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="list-circle-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Laundry Price List</span>
+                        </li>
                     </a>
-                </li>
+                
 
-                <li>
+                
                     <a href="car_wash_point">
-                        <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </span>
-                        <span class="title">Car Washing point</span>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="location-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Car Washing point</span>
+                        </li>
                     </a>
-                </li>
 
-                <li>
+                
                     <a href="add_car_wash_booking">
-                        <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </span>
-                        <span class="title">Add Car Bookings</span>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="add-circle-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Add Car Bookings</span>
+                        </li>
                     </a>
-                </li>
+                
 
-                <li>
+                
                     <a href="car_wash_bookings">
-                        <span class="icon">
-                            <ion-icon name="chatbubble-outline"></ion-icon>
-                        </span>
-                        <span class="title">Car Wash Bookings</span>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="book-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Car Wash Bookings</span>
+                        </li>
                     </a>
-                </li>
+                
 
-                <li>
+                
                     <a href="manage_enquiries">
-                        <span class="icon">
-                            <ion-icon name="file-outline"></ion-icon>
-                        </span>
-                        <span class="title">Manage Enquiries</span>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="information-circle-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Manage Enquiries</span>
+                        </li>
                     </a>
-                </li>
+                
 
-                <li>
+                
                     <a href="account_details">
-                        <span class="icon">
-                            <ion-icon name="lock-opened-outline"></ion-icon>
-                        </span>
-                        <span class="title">Account Details</span>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="people-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Account Details</span>
+                        </li>
                     </a>
-                </li>
+                
 
-                <li>
+                
                     <a href="reports">
-                        <span class="icon">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
-                        </span>
-                        <span class="title">Reports</span>
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="bar-chart-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Reports</span>
+                        </li>
                     </a>
-                </li>
-
-               
+                
             </ul>
         </div>
 </nav>

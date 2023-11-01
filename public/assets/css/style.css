@@ -110,7 +110,7 @@ body{
     margin-left: 270px;
     padding: 17px;
 }
-main{
+.mainbody{
     margin-left: 270px;
 }
 
@@ -343,7 +343,4 @@ tr:nth-child(even) {
     padding-top:10px;
 }
 
-main{
-    margin: 20px;
-}
 }

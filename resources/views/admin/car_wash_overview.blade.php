@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <div class="py-10">
+    <div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         
         <div style="margin-top:25px;margin-bottom:15px;">
@@ -10,19 +10,19 @@
             <!-- ===== card view ===== -->
             <div class="cardbox">
                 <div class="xcontrol">
-                    <img src="{{asset('assets/img/2.jpg')}}" alt="" style="height:260px;background-color:blue;border-radius:8px;">
+                    <img src="{{asset('assets/img/car1.jpg')}}" alt="" style="height:260px;background-color:blue;border-radius:8px;">
                     <button class="cont"><a href="dashboard" >Laundry Overview</a></button>
                 </div>
                 <div style="width:50%;height:300px;">
                     <div style="display:inline-flex;gap:20px;">
-                        <div class="card" style="background-color:darkblue;color:white;"><h1>{{96}}</h1>Total Request</div>
-                        <div class="card" style="background-color:#FFD700;color:white;"><h1>{{7}}</h1>New Request</div>
-                        <div class="card" style="background-color:darkgreen;color:white;"><h1>{{19}}</h1>Accepted</div>
+                        <div class="card" style="background-color:darkblue;color:white;"><h1>{{96}}</h1>Total Bookings</div>
+                        <div class="card" style="background-color:#FFD700;color:white;"><h1>{{7}}</h1>New Bookings</div>
+                        <div class="card" style="background-color:darkgreen;color:white;"><h1>{{19}}</h1>Wash Points</div>
                     </div>
                     <div style="display:inline-flex;gap:20px; margin-top:20px;">
                         <div class="card" style="background-color:orangered;color:white;"><h1>{{40}}</h1>Inprocess</div>
                         <div class="card" style="background-color:darkblue;color:white;"><h1>{{60}}</h1>Finished Task</div>
-                        <div class="card" style="background-color:black;color:white;"><h1>{{200}}</h1>Users</div>
+                        <div class="card" style="background-color:black;color:white;"><h1>{{200}}</h1>Enquiries</div>
                     </div>
                 </div>
             </div>

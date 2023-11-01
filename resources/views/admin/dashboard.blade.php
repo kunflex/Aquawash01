@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <div class="py-10">
+    <div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         
         <div style="margin-top:25px;margin-bottom:15px;">

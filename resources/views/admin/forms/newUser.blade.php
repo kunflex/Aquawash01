@@ -1,7 +1,10 @@
-<x-guest-layout>
+<x-app-layout>
 
-<br>
-    <form method="POST" action="{{ route('register') }}">
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                <form method="POST" action="{{ url('createuser') }}">
         @csrf
 
         <!-- Name -->
@@ -17,6 +20,18 @@
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+
+        <!-- Usertype -->
+        <div class="mt-4">
+            <x-input-label for="usertype" :value="__('usertype')" />
+            <select id="usertype" style="border-radius:7px;border-color:#ddd;" class="block mt-1 w-full" name="usertype" value="usertype">
+            <option value="">--choose one--</option>
+            <option value="staff">staff</option>
+            <option value="user">user</option>
+            </select>
+            <x-input-error :messages="$errors->get('usertype')" class="mt-2" />
+        </div>
+
 
         <!-- Password -->
         <div class="mt-4">
@@ -42,16 +57,14 @@
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class=" text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ml-4">
+           
+            <x-primary-button class="ml-4" style="background-color:blue;">
                 {{ __('Register') }}
             </x-primary-button>
         </div>
     </form>
-    <!-- =====Popup Content===== -->
-        
-    <!-- =====end Popup Content===== -->
-</x-guest-layout>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>

@@ -4,11 +4,11 @@
     float:left;
     top:0;
     position: fixed;
-    background-color: white;
+    background-color: rgb(3, 3, 94);
 }
 .navigation ul{
     width:100%;
-    padding-top:7px;
+    padding-top:0px;
     display:inline-block;
 }
 .navigation ul li{
@@ -18,27 +18,45 @@
 }
 .navigation ul li::before{
     position: absolute;
-    background-color: white;
+    background-color: rgb(3, 3, 94);
     height: 40px;
     width: 40px;
     content: '';
     border-radius:200px;
     margin: -5px;
 }
-.navigation ul li a{
-    color:rgb(3, 3, 94);
-    padding:5px;
-    padding-left: 40px;
+.navigation ul a{
+    color:white;
 }
 
-.navigation ul li:hover{
-    background-color: rgb(3, 3, 94);
+.navigation ul a li:hover{
+    background-color:white;
     border-bottom-left-radius: 50px;
     border-top-left-radius: 50px;
     color:blue;
 }
-.navigation ul li a:hover{
-    color:white;
+.navigation ul a:hover{
+    color:rgb(3, 3, 94);
 }
 
 
+/* Responsiveness of the webpages */
+@media (max-width:780px) {
+    .user{
+        width: 70px;
+        margin-left: 365px;
+    }
+.user .ml-1{
+    display: none;
+}
+.user .user-name{
+    display:none;
+}
+.user .trigger{
+    float:right;
+}
+.Sidebar{
+    position: absolute;
+    width:60px;
+}
+}
