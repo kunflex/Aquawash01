@@ -29,7 +29,7 @@
                                 <b>&tridot;</b><strong>Warning!</strong> Warning Alert.
                             </div>
                         </div>
-                        
+                        @if (is_array($query) || is_object($query))
                         <table>
                             <tr style="height:50px;">
                                 <th>ID</th>
@@ -40,71 +40,59 @@
                                 <th>Phone</th>
                                 <th>Actions</th>
                             </tr>
+                            @foreach($query as $query)
                             <tr>
-                                <td>1</td>
-                                <td>Admin</td>
-                                <td>Super Admin</td>
+                                <td>{{$query->id}}</td>
+                                <td>
+                                    @if($query->role_id == 1)
+                                        <span>admin</span>
+                                    @else
+                                        <span>user</span>
+                                    @endif
+                                </td>
+                                <td>{{$query->name}}</td>
                                 <td>
                                     <center>
+                                        @if(!empty($query->profile))
+                                        <img src="{{$query->profile}}" alt="" style="height:40px;width:40px;border-radius:50%;">
+                                        @else
                                         <img src="{{asset('assets/img/customer01.jpg')}}" alt="" style="height:40px;width:40px;border-radius:50%;">
+                                        @endif
                                     </center>
                                 </td>
-                                <td>admin@gmail.com</td>
+                                <td>{{$query->email}}</td>
                                 <td>+23358421563</td>
                                 <td>
                                     <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:#FFD700;border-radius:10px;">Update</button>
                                     <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkred;border-radius:10px;">Delete</button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>User</td>
-                                <td>Test User</td>
-                                <td>
-                                    <center>
-                                        <img src="{{asset('assets/img/customer01.jpg')}}" alt="" style="height:40px;width:40px;border-radius:50%;">
-                                    </center>
-                                </td>
-                                <td>user@gmail.com</td>
-                                <td>+23358421563</td>
-                                <td>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:#FFD700;border-radius:10px;">Update</button>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkred;border-radius:10px;">Delete</button>
-                                </td>
+                            @endforeach
+                        </table>
+                        @else
+                        <table>
+                            <tr style="height:50px;">
+                                <th>ID</th>
+                                <th>Role</th>
+                                <th>Full Name</th>
+                                <th>Profile</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
                             </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Admin</td>
-                                <td>Super Admin</td>
-                                <td>
-                                    <center>
-                                        <img src="{{asset('assets/img/customer01.jpg')}}" alt="" style="height:40px;width:40px;border-radius:50%;">
-                                    </center>
-                                </td>
-                                <td>admin@gmail.com</td>
-                                <td>+23358421563</td>
-                                <td>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:#FFD700;border-radius:10px;">Update</button>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkred;border-radius:10px;">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Admin</td>
-                                <td>Super Admin</td>
-                                <td>
-                                    <center>
-                                        <img src="{{asset('assets/img/customer01.jpg')}}" alt="" style="height:40px;width:40px;border-radius:50%;">
-                                    </center>
-                                </td>
-                                <td>admin@gmail.com</td>
-                                <td>+23358421563</td>
-                                <td>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:#FFD700;border-radius:10px;">Update</button>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkred;border-radius:10px;">Delete</button>
-                                </td>
+                            <tr style="height:50px;">
+                                <center>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{$query}}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </center>
                             </tr>
                         </table>
+                        @endif
 
                         <br><br>
                         <button class="popup-btn" id="popup-btn">open pop up</button>

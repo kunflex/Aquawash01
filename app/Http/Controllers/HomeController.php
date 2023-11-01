@@ -16,8 +16,24 @@ class HomeController extends Controller
     }
 
     public function Account(){
-        return view('admin.account_details');
+        $query = User::all();
+        return view('admin.account_details',compact('query'));
     }
+
+    public function AccountList(){
+        $search = $_GET['input-search'];
+        $query = User::where('name','like','%'.$search.'%')->get();
+        if(!$query->isEmpty()){
+            return view('admin.account_details',compact('query'));
+        }
+        else{
+            $query = 'search not found!';
+            return view('admin.account_details',compact('query'));
+        }
+        
+    }
+    
+    
 
     public function reports(){
         return view('admin.reports');

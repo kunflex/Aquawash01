@@ -32,6 +32,7 @@ Route::get('/search-box', function () {
 // ========HomeController Routes=======
 Route::get('/dashboard', [HomeController::class, 'HomeIndex'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/account_details', [HomeController::class, 'Account']);
+Route::get('/search-box', [HomeController::class, 'AccountList']);
 Route::get('/reports', [HomeController::class, 'reports']);
 Route::get('/manage_enquiries',[HomeController::class, 'manage_enquiries']);
 
