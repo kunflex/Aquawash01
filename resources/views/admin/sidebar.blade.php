@@ -42,12 +42,12 @@
                 
 
                 
-                    <a href="car_wash_point">
+                    <a href="wash_point">
                         <li>
                             <span class="icon">
                                 <ion-icon name="location-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
                             </span>
-                            <span class="title" style="margin-left:15px">Car Washing point</span>
+                            <span class="title" style="margin-left:15px">Washing point</span>
                         </li>
                     </a>
 

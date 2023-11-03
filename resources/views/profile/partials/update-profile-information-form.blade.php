@@ -26,7 +26,7 @@
                 @if(!empty($profile))
                     <img src="{{Auth::user()->profile}}" name="profile" id="uploadedAvatar" alt="user-avatar" style="border-radius:10px;height:110px;width:110px;">
                 @else
-                    <img src="{{asset('assets/img/customer01.jpg')}}" name="profile" id="uploadedAvatar" alt="user-avatar" style="border-radius:10px;height:110px;width:110px;">
+                    <img src="{{asset('assets/img/avarta.png')}}" name="profile" id="uploadedAvatar" alt="user-avatar" style="background-color:whitesmoke;border-radius:10px;height:110px;width:110px;">
                 @endif
                 <p class="text-muted mb-0" style="color:gray;">Allowed JPG or PNG</p>  
             </div>

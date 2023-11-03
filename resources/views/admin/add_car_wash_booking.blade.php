@@ -30,15 +30,15 @@
                             <div style="display:inline-flex;gap:30px;width:100%;">
                                <!-- car_brand Address -->
                                 <div style="width:100%;margin-top:20px;">
-                                    <x-input-label for="Pick_up" :value="__('Pick up/Drop Date')" />
+                                    <x-input-label for="pick_up" :value="__('Pick up/Drop Date')" />
                                     <x-text-input id="pick_up" class="block mt-1 w-full" type="date" name="pick_up" :value="old('pick_up')" required autofocus autocomplete="username" />
                                     <x-input-error :messages="$errors->get('pick_up')" class="mt-2" />
                                 </div>
 
                                 <div  style="width:100%;margin-top:20px;">
-                                    <x-input-label for="Pick_up_time" :value="__('Pick up/Drop Time')" />
-                                    <x-text-input id="Pick_up_time" class="block mt-1 w-full" type="time" name="Pick_up_time" :value="old('Pick_up_time')" required autofocus autocomplete="username" />
-                                    <x-input-error :messages="$errors->get('Pick_up_time')" class="mt-2" />
+                                    <x-input-label for="pick_up_time" :value="__('Pick up/Drop Time')" />
+                                    <x-text-input id="pick_up_time" class="block mt-1 w-full" type="time" name="pick_up_time" :value="old('pick_up_time')" required autofocus autocomplete="username" />
+                                    <x-input-error :messages="$errors->get('pick_up_time')" class="mt-2" />
                                 </div>
 
                             </div>
@@ -100,15 +100,15 @@
 
                                 <div style="display:inline-flex;width:100%;gap:30px;">
                                     <div  style="width:100%;margin-top:20px;">
-                                        <x-input-label for="contact_person" value="Contact Person's Name" />
-                                        <x-text-input id="contact_person" class="block mt-1 w-full" type="text" name="contact_person" :value="old('contact_person')" required autofocus autocomplete="username" />
-                                        <x-input-error :messages="$errors->get('contact_person')" class="mt-2" />
+                                        <x-input-label for="contact_person_name" value="Contact Person's Name" />
+                                        <x-text-input id="contact_person_name" class="block mt-1 w-full" type="text" name="contact_person_name" :value="old('contact_person_name')" required autofocus autocomplete="username" />
+                                        <x-input-error :messages="$errors->get('contact_person_name')" class="mt-2" />
                                     </div>
 
                                     <div  style="width:100%;margin-top:20px;">
-                                        <x-input-label for="contact_person" value="Contact Person's Number" />
-                                        <x-text-input id="contact_person" class="block mt-1 w-full" type="text" name="contact_person" :value="old('contact_person')" required autofocus autocomplete="username" />
-                                        <x-input-error :messages="$errors->get('contact_person')" class="mt-2" />
+                                        <x-input-label for="contact_person_number" value="Contact Person's Number" />
+                                        <x-text-input id="contact_person_number" class="block mt-1 w-full" type="text" name="contact_person_number" :value="old('contact_person_number')" required autofocus autocomplete="username" />
+                                        <x-input-error :messages="$errors->get('contact_person_number')" class="mt-2" />
                                     </div>
                                 </div>
 

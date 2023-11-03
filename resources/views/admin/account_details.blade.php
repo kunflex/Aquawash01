@@ -8,7 +8,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                         <div style="float:right;">
-                            <button style="transform:scale(1);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkblue;border-radius:10px;"><b>&#43;</b> new user</button>
+                            <a href="new_user"><button style="transform:scale(1);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkblue;border-radius:10px;"><b>&#43;</b> new user</button></a>
                         </div>
                     <!-- ====Price List==== -->
                     <center><strong style="font-size:20px;">{{ __("Registered User List") }}</strong><hr></center>
@@ -56,12 +56,12 @@
                                         @if(!empty($query->profile))
                                         <img src="{{$query->profile}}" alt="" style="height:40px;width:40px;border-radius:50%;">
                                         @else
-                                        <img src="{{asset('assets/img/customer01.jpg')}}" alt="" style="height:40px;width:40px;border-radius:50%;">
+                                        <img src="{{asset('assets/img/avarta.png')}}" alt="" style="background-color:whitesmoke;padding:5px;height:40px;width:40px;border-radius:50%;">
                                         @endif
                                     </center>
                                 </td>
                                 <td>{{$query->email}}</td>
-                                <td>+23358421563</td>
+                                <td>{{$query->phone}}</td>
                                 <td>
                                     <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:#FFD700;border-radius:10px;">Update</button>
                                     <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkred;border-radius:10px;">Delete</button>

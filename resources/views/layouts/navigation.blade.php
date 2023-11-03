@@ -17,7 +17,7 @@
                                             @if(!empty($profile))
                                                 <img src="{{Auth::user()->profile}}" name="profile" alt="" style="border-radius:50%;height:30px;width:30px;">
                                             @else
-                                            <img src="{{asset('assets/img/customer01.jpg')}}" alt="" style="border-radius:50%;height:30px;width:30px;">
+                                            <img src="{{asset('assets/img/avarta.png')}}" alt="" style="background-color:whitesmoke;border-radius:50%;height:30px;width:30px;padding:5px;">
                                             @endif
                                         </div>
                                         <div class="user-name">{{ Auth::user()->name }}</div>

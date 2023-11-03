@@ -12,52 +12,56 @@
                         </div>
                     <!-- ====Price List==== -->
                     <center><strong style="font-size:20px;">{{ __("Laundry Price List") }}</strong><hr></center>
+                        <form  method="get" action="{{url('search-box3')}}" style="float:left;">
+                                <input type="text" name="input-search" id="input-search" style="margin-top:8px;margin-bottom:8px;padding:6px;border-radius:10px;">
+                                <button style="transform:scale(1);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkblue;border-radius:10px;">search</button>
+                        </form><br>
                     <div style="margin-top:25px;margin-bottom:15px;">
+                        @if (is_array($query) || is_object($query))
                         <table>
                             <tr style="height:50px;">
+                                <th>ID</th>
                                 <th>Quantity</th>
                                 <th>Items</th>
                                 <th>Unit Price (<b>&#8373;</b>)</th>
                                 <th>Actions</th>
                             </tr>
+
+                            @foreach($query as $query)
                             <tr>
-                                <td>1</td>
-                                <td>Top wear</td>
-                                <td>5</td>
+                                <td>{{$query->id}}</td>
+                                <td>{{$query->quantity}}</td>
+                                <td>{{$query->items}}</td>
+                                <td>{{$query->price}}</td>
                                 <td>
                                     <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:#FFD700;border-radius:10px;">Update</button>
                                     <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkred;border-radius:10px;">Delete</button>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Jeans Trouser</td>
-                                <td>7</td>
-                                <td>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:#FFD700;border-radius:10px;">Update</button>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkred;border-radius:10px;">Delete</button>
-                                </td>
+                            @endforeach
+                        </table>
+
+                        @else
+                        <table>
+                            <tr style="height:50px;">
+                                <th>ID</th>
+                                <th>Quantity</th>
+                                <th>Items</th>
+                                <th>Unit Price (<b>&#8373;</b>)</th>
+                                <th>Actions</th>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Trouser Lengtd</td>
-                                <td>5</td>
-                                <td>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:#FFD700;border-radius:10px;">Update</button>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkred;border-radius:10px;">Delete</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Suit</td>
-                                <td>10</td>
-                                <td>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:#FFD700;border-radius:10px;">Update</button>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkred;border-radius:10px;">Delete</button>
-                                </td>
+                            <tr style="height:50px;">
+                                <center>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{$query}}</td>
+                                    <td></td>
+                                    <td></td>
+                                </center>
                             </tr>
                         </table>
-                     </div>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>

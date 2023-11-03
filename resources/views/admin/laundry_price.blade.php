@@ -3,7 +3,7 @@
     <div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div style="margin-top:25px;margin-bottom:15px;">
-                <h2 style="font-size:20px;"><a href="dashboard" style="font-size:20px;">Admin Dashboard</a>/<a href="laundry_price_list" style="font-size:20px;">Laundry Price List</a>/<a href="laundry_new_item" style="font-size:20px;">New Item & Price</a></h2>
+                <h2 style="font-size:20px;"><a href="dashboard" style="font-size:20px;">Admin Dashboard</a>/<a href="laundry_price_list" style="font-size:20px;">Laundry Price List</a>/<a href="laundry_new_item" style="font-size:20px;">Form</a></h2>
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
