@@ -1,8 +1,11 @@
-document.getElementById('popup-btn').addEventListener('click',function(){
-	document.querySelector('.modal-container').style.display = "flex";
-});
 
-//close pop up 
-document.getElementById('close-btn').addEventListener('click',function(){
-	document.querySelector('.modal-container').style.display = "none";
-});
+
+// function openUpdateModal() {
+// 	document.getElementById('modal-container').style.display = 'flex';
+// }
+
+// function closeUpdateModal() {
+// 	document.getElementById('modal-container').style.display = 'none';
+// }
+
+

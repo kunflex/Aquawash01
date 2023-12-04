@@ -4,7 +4,7 @@
   <div class="bg-white">
         <div class="p-2 text-gray-900">
             <div style="float:left;margin-top:16px;">
-                <button id="toggle-button" style="transform:scale(1.7);margin-left:280px;"><ion-icon name="menu-outline"></ion-icon></button>
+                <button id="toggle-button" style="transform:scale(1.7);margin-left:290px;"><ion-icon name="menu-outline"></ion-icon></button>
             </div>
                         <div class="user">
                             <x-dropdown align="right" width="48">
@@ -15,7 +15,7 @@
                                                 $profile = auth()->user()->profile;
                                             @endphp
                                             @if(!empty($profile))
-                                                <img src="{{Auth::user()->profile}}" name="profile" alt="" style="border-radius:50%;height:30px;width:30px;">
+                                                <img src="{{ asset('storage/' . $profile) }}" name="profile" alt="" style="border-radius:50%;height:30px;width:30px;">
                                             @else
                                             <img src="{{asset('assets/img/avarta.png')}}" alt="" style="background-color:whitesmoke;border-radius:50%;height:30px;width:30px;padding:5px;">
                                             @endif

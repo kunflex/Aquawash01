@@ -83,7 +83,14 @@
                         </li>
                     </a>
                 
-
+                    <a href="employee">
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="people-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Manage Employee</span>
+                        </li>
+                    </a>
                 
                     <a href="account_details">
                         <li>

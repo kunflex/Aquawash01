@@ -11,8 +11,8 @@
                     <!-- ====Price List==== -->
                     <center><strong style="font-size:20px;">{{ __("Laundry Price") }}</strong><hr></center>
                     <div style="margin-top:25px;margin-bottom:15px;">
-                    <form action="{{url('laundry_price_form')}}" method="post">
-                            
+                        <form action="{{url('laundry_price_form')}}" method="post">
+                            @csrf
                                 <div  style="width:100%;margin-top:20px;">
                                     <x-input-label for="quantity" :value="__('Quantity')" />
                                     <x-text-input id="quantity" class="block mt-1 w-full" type="text" name="quantity" :value="old('quantity')" required autofocus autocomplete="username" />

@@ -36,8 +36,8 @@
                                 <td>{{$query->category}}</td>
                                 <td>{{$query->contact}}</td>
                                 <td>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:#FFD700;border-radius:10px;">Update</button>
-                                    <button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkred;border-radius:10px;">Delete</button>
+                                    <a href=""><button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:#FFD700;border-radius:10px;">Update</button></a>
+                                    <a href="{{url('deletewashpoints'.$query -> id)}}"><button style="transform:scale(0.8);margin-top:8px;margin-bottom:8px;padding:6px;color:white;background-color:darkred;border-radius:10px;">Delete</button></a>
                                 </td>
                             </tr>
                             @endforeach

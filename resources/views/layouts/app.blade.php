@@ -13,11 +13,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <title>AquaClean | Official website page</title>
          <link rel="shortcut icon" href="{{asset('assets/img/aquaclean.png')}}" type="image/png">
-
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/sidebar.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/popup.css')}}">
     </head>
-    <style>@import url('assets/css/style.css');</style>
-    <style>@import url('assets/css/sidebar.css');</style>
-    <style>@import url('assets/css/popup.css');</style>
+
 <!-- ====== profile upload ======= -->
     <script src="{{ asset('assets/js/ProfileSettings.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

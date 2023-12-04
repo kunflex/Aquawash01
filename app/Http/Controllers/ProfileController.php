@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ProfileController extends Controller
@@ -27,17 +28,46 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        
+        $user = $request->user();
+        $userData = $request->validated();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        // Check if a new profile picture is uploaded
+        if ($request->hasFile('profile')) {
+            // Store the uploaded file and get the path
+            $path = $request->file('profile')->store('profile_pictures', 'public');
+
+            // Delete the old profile picture if exists
+            if ($user->profile) {
+                Storage::disk('public')->delete($user->profile);
+            }
+
+            // Update the user's profile column with the new path
+            $user->profile = $path;
         }
 
-        $request->user()->save();
-        Alert::success('Profile Update','Profile Upated Successfully');
+        // Update other user information
+        $user->name = $request->input('name');
+        $user->phone = $request->input('phone');
+        $user->email = $request->input('email');
+
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
+        }
+
+        $user->save();
+
+        Alert::success('Profile Update', 'Profile Updated Successfully');
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
+
+/**
+ * Update the user's profile information.
+ */
+
+
+   
     /**
      * Delete the user's account.
      */

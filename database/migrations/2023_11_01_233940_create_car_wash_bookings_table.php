@@ -13,19 +13,23 @@ return new class extends Migration
     {
         Schema::create('car_wash_bookings', function (Blueprint $table) {
             $table->id();
-            $table->string('car_invoice');
-            $table->string('pick_up');
-            $table->string('pick_up_time');
-            $table->string('customer_name');
-            $table->string('customer_number');
-            $table->string('car_brand');
-            $table->string('car_color');
-            $table->string('car_number');
-            $table->string('car_washing_point');
-            $table->string('service');
-            $table->string('contact_person_name');
-            $table->string('contact_person_number');
-            $table->string('description');
+            $table->string('car_invoice')->nullable();
+            $table->string('pick_up')->nullable();
+            $table->string('pick_up_time')->nullable();
+            $table->string('customer_name')->nullable();
+            $table->string('customer_number')->nullable();
+            $table->string('car_brand')->nullable();
+            $table->string('car_color')->nullable();
+            $table->string('car_number')->nullable();
+            $table->string('car_washing_point')->nullable();
+            $table->string('service')->nullable();
+            $table->string('contact_person_name')->nullable();
+            $table->string('contact_person_number')->nullable();
+            $table->string('description')->nullable();
+            $table->string('payment')->nullable();
+            $table->string('status')->nullable();
+            $table->string('amount')->nullable();
+            $table->string('assigned_to')->nullable();
             $table->timestamps();
         });
     }

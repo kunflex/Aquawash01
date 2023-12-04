@@ -20,14 +20,35 @@
                 
 
                 
-                    <a href="">
+                    <a href="laundry_request_form">
                         <li>
                             <span class="icon">
-                                <ion-icon name="home-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                                <ion-icon name="document-text-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
                             </span>
-                            <span class="title" style="margin-left:15px">Service Desk</span>
+                            <span class="title" style="margin-left:15px">Laundry Request</span>
                         </li>
                     </a>
+
+
+                    <a href="add_car_wash_booking">
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="add-circle-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Add Car Bookings</span>
+                        </li>
+                    </a>
+
+
+                    <a href="car_wash_bookings">
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="book-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Car Wash Bookings</span>
+                        </li>
+                    </a>
+                
                 
 
                 

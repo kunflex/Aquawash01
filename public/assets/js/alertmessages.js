@@ -23,3 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
         errorDiv.style.display = "none";
     });
 });
+
+
+	//close alert message
+function exit(){
+    var button = document.getElementId('exit');
+		document.querySelector('.success').style.display = "none";
+	};
+

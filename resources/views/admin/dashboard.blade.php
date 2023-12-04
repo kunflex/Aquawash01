@@ -10,16 +10,16 @@
             <!-- ===== card view ===== -->
             <div class="cardbox">
                 <div class="xcontrol">
-                    <img src="{{asset('assets/img/1.jpg')}}" alt="" style="height:260px;background-color:blue;border-radius:8px;">
+                    <img src="{{asset('assets/img/wash.png')}}" alt="" style="width:100%;height:260px;background-color:white;border-radius:8px;">
                     <button class="cont"><a href="car_wash_overview" >Car wash Overview</a></button>
                 </div>
                 <div style="width:50%;height:300px;">
-                    <div style="display:inline-flex;gap:20px;">
+                    <div style="width:100%;display:inline-flex;gap:20px;">
                         <div class="card" style="background-color:darkblue;color:white;"><h1>{{196}}</h1>Total Request</div>
                         <div class="card" style="background-color:#FFD700;color:white;"><h1>{{12}}</h1>New Request</div>
                         <div class="card" style="background-color:darkgreen;color:white;"><h1>{{$laundry_wash_point}}</h1>Wash Points</div>
                     </div>
-                    <div style="display:inline-flex;gap:20px; margin-top:20px;">
+                    <div style="width:100%;display:inline-flex;gap:20px; margin-top:20px;">
                         <div class="card" style="background-color:orangered;color:white;"><h1>{{30}}</h1>Inprocess</div>
                         <div class="card" style="background-color:darkblue;color:white;"><h1>{{96}}</h1>Finished Task</div>
                         <div class="card" style="background-color:black;color:white;"><h1>{{$Users}}</h1>Users</div>
@@ -43,26 +43,14 @@
                                 <th>Items</th>
                                 <th>Unit Price (<b>&#8373;</b>)</th>
                             </tr>
+
+                            @foreach($price as $price)
                             <tr>
-                                <td>1</td>
-                                <td>Top wear</td>
-                                <td>5</td>
+                                <td>{{$price->quantity}}</td>
+                                <td>{{$price->items}}</td>
+                                <td>{{$price->price}}</td>
                             </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Jeans Trouser</td>
-                                <td>7</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Trouser Length</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Suit</td>
-                                <td>10</td>
-                            </tr>
+                            @endforeach
                         </table>
                      </div>
                 </div>

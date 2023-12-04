@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
 
@@ -24,15 +24,15 @@
                     $profile = auth()->user()->profile;
                 @endphp
                 @if(!empty($profile))
-                    <img src="{{Auth::user()->profile}}" name="profile" id="uploadedAvatar" alt="user-avatar" style="border-radius:10px;height:110px;width:110px;">
+                    <img src="{{ asset('storage/' . $profile) }}" name="profile" id="uploadedAvatar" alt="user-avatar" style="border-radius:10px;height:110px;width:110px;display:block;">
                 @else
-                    <img src="{{asset('assets/img/avarta.png')}}" name="profile" id="uploadedAvatar" alt="user-avatar" style="background-color:whitesmoke;border-radius:10px;height:110px;width:110px;">
+                    <img src="{{asset('assets/img/avarta.png')}}"  id="uploadedAvatar" alt="user-avatar" style="background-color:whitesmoke;border-radius:10px;height:110px;width:110px;">
                 @endif
                 <p class="text-muted mb-0" style="color:gray;">Allowed JPG or PNG</p>  
             </div>
             <div>
                     <label  for="upload" tabindex="0" style="margin-top:75px;box-shadow:0px 3px 6px #ddd;padding:7px;background-color:blue;color:white;border-radius:6px;">Upload
-                        <input type="file" id="upload" class="account-file-input" hidden="" accept="image/png, image/jpeg">
+                        <input type="file" id="upload" name="profile" class="account-file-input" hidden="" accept="image/png, image/jpeg">
                     </label>
                     <button type="button" class="account-image-reset" style="margin-top:75px;box-shadow:0px 3px 6px #ddd;transform:scale(0.9);padding:7px;background-color:darkred;color:white;border-radius:6px;">Remove</button>
             </div>
@@ -43,6 +43,12 @@
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
+        </div>
+
+        <div>
+            <x-input-label for="phone" :value="__('Phone')" />
+            <x-text-input id="phone" name="phone" type="text" class="mt-1 block w-full" :value="old('phone', $user->phone)" required autofocus autocomplete="phone" />
+            <x-input-error class="mt-2" :messages="$errors->get('phone')" />
         </div>
 
         <div>

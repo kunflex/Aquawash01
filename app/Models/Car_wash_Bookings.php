@@ -24,5 +24,9 @@ class Car_wash_Bookings extends Model
         'contact_person_name',
         'contact_person_number',
         'description',
+        'payment',
+        'status',
+        'amount',
+        'assigned_to',
     ];
 }

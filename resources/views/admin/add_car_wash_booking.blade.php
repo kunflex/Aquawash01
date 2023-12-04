@@ -3,16 +3,24 @@
     <div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div style="margin-top:25px;margin-bottom:15px;">
+            @php
+                $role_id = Auth::user()->role_id;
+            @endphp
+            @if($role_id == 1)
                 <h2 style="font-size:20px;"><a href="dashboard" style="font-size:20px;">Admin Dashboard</a>/<a href="add_car_wash_booking" style="font-size:20px;">Add Car Washing Booking</a></h2>
+            @else
+                 <h2 style="font-size:20px;"><a href="dashboard" style="font-size:20px;">Dashboard</a>/<a href="add_car_wash_booking" style="font-size:20px;">Add Car Washing Booking</a></h2>
+            @endif
             </div>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     
-                    <!-- ====Price List==== -->
+                    <!-- ====wash List==== -->
                     <center><strong style="font-size:20px;">{{ __("Add Car Washing Booking") }}</strong><hr></center>
                     <div style="margin-top:25px;margin-bottom:15px;">
                         
-                        <form action="{{url('carwash_form')}}" method="post">
+                        <form action="{{url('carwash_store')}}" method="post">
+                            @csrf
                             <div style="display:inline-flex;gap:30px;width:100%;">
                                <!-- car_brand Address -->
                                 <div style="width:100%;">
@@ -53,7 +61,7 @@
 
                                     <div  style="width:100%;margin-top:20px;">
                                         <x-input-label for="customer_number" value="Customer's Number" />
-                                        <x-text-input id="customer_number" class="block mt-1 w-full" type="text" name="customer_number" value="{{Auth::user()->number}}" required autofocus autocomplete="username" readonly/>
+                                        <x-text-input id="customer_number" class="block mt-1 w-full" type="text" name="customer_number" value="{{Auth::user()->phone}}" required autofocus autocomplete="username" readonly/>
                                         <x-input-error :messages="$errors->get('customer_number')" class="mt-2" />
                                     </div>
                                 </div>
@@ -81,8 +89,14 @@
                                     <x-input-label for="car_washing_point" :value="__('Car Washing Point')" />
                                     <select id="car_washing_point" class="block mt-1 w-full" type="text" name="car_washing_point" :value="old('car_washing_point')" required autofocus autocomplete="username" style="border-radius:6px;border:1px solid #ddd;">
                                         <option value="">---Select Washing Point---</option>
-                                        <option value="">XZY Washing Bay</option>
-                                        <option value="">ABC Car Washing Point</option>
+                                        @foreach($wash as $wash)
+                                            <option value="{{$wash->name}} {{$wash->address}}">
+                                                <tr>
+                                                    <td>{{$wash->name}}</td>
+                                                    <td>{{$wash->address}}</td>
+                                                </tr>
+                                            </option>
+                                            @endforeach
                                     </select>
                                     <x-input-error :messages="$errors->get('car_washing_point')" class="mt-2" />
                                 </div>
@@ -91,9 +105,9 @@
                                     <x-input-label for="service" :value="__('Service')" />
                                     <select id="service" class="block mt-1 w-full" type="text" name="service" :value="old('service')" required autofocus autocomplete="username" style="border-radius:6px;border:1px solid #ddd;">
                                         <option value="">---Select Your Washing Plan ---</option>
-                                        <option value="">Basic Cleaning (Seats Cleaning, Vacuum Cleaning, Exterior Cleaning)</option>
-                                        <option value="">Premium Cleaning (Seats Cleaning, Vacuum Cleaning, Exterior Cleaning, Interior Wet Cleaning)</option>
-                                        <option value="">Complex Cleaning (Seats Cleaning, Vacuum Cleaning, Exterior Cleaning, Interior Wet Cleaning, Window Wiping)</option>
+                                        <option value="Basic Cleaning (Seats Cleaning, Vacuum Cleaning, Exterior Cleaning)">Basic Cleaning (Seats Cleaning, Vacuum Cleaning, Exterior Cleaning)</option>
+                                        <option value="Premium Cleaning (Seats Cleaning, Vacuum Cleaning, Exterior Cleaning, Interior Wet Cleaning)">Premium Cleaning (Seats Cleaning, Vacuum Cleaning, Exterior Cleaning, Interior Wet Cleaning)</option>
+                                        <option value="Complex Cleaning (Seats Cleaning, Vacuum Cleaning, Exterior Cleaning, Interior Wet Cleaning, Window Wiping)">Complex Cleaning (Seats Cleaning, Vacuum Cleaning, Exterior Cleaning, Interior Wet Cleaning, Window Wiping)</option>
                                     </select>
                                     <x-input-error :messages="$errors->get('service')" class="mt-2" />
                                 </div>
@@ -116,6 +130,17 @@
                                     <x-input-label for="description" :value="__('Description (Optional)')" />
                                     <textarea id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" required autofocus autocomplete="username" style="border-radius:6px;border:1px solid #ddd;"></textarea>
                                     <x-input-error :messages="$errors->get('description')" class="mt-2" />
+                                </div>
+                                
+                                <div  style="width:100%;margin-top:20px;">
+                                    <x-input-label for="payment" :value="__('Payment Method')" />
+                                    <select id="payment" class="preview-input" type="text" name="payment" :value="old('payment')" required autofocus autocomplete="username" style="border-radius:6px;border:1px solid #ddd;" data-preview="#preview17">
+                                        <option value="">---Select payment type ---</option>
+                                        <option value="Credit Card">Credit Card</option>
+                                        <option value="mobile money">mobile money</option>
+                                        <option value="Cash on Delivery">Cash on Delivery </option>
+                                    </select>
+                                    <x-input-error :messages="$errors->get('payment')" class="mt-2" />
                                 </div><br>
 
                                 <button class="block mt-1 w-full" style="background-color:#0096FF;color:white;padding:10px;border-radius:6px;"><ion-icon name="send" style="margin-top:8px;margin-right:7px"></ion-icon>Submit Request</button>
