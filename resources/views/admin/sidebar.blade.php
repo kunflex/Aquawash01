@@ -28,6 +28,15 @@
                             <span class="title" style="margin-left:15px">Laundry Request</span>
                         </li>
                     </a>
+
+                    <a href="{{url('LaundryBookList')}}">
+                        <li>
+                            <span class="icon">
+                                <ion-icon name="book-outline" style="margin-top:5px;margin-left:3px"></ion-icon>
+                            </span>
+                            <span class="title" style="margin-left:15px">Laundry Bookings</span>
+                        </li>
+                    </a>
                 
 
                 

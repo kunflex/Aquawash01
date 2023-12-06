@@ -64,6 +64,14 @@ class CarwashController extends Controller
         return $pdf->stream('aquaclean.pdf');
     }
 
+    public function Cancel_Booking(Request $request, $id){
+        $query=Car_wash_Bookings::find($id);
+        $query ->status ='Cancel';
+        $query->update();
+        Alert::success('Car Wash Booking','Car wash booking cancelled successfully');
+        return redirect('car_wash_bookings')->with('success', 'Car wash booking cancelled successfully');
+    }
+
     public function car_wash_store(Request $request){
         $request->validate([
             'car_invoice' => 'required|unique:car_wash_bookings,car_invoice',
@@ -119,12 +127,22 @@ class CarwashController extends Controller
         ]);
 
         $car = Car_wash_Bookings::findOrFail($id);
-        $car ->assigned_to = $request->input('assigned_to');
-        $car ->status =$request->input('status');
-        $car ->amount= $request->input('amount');
-        $car->update();
-        Alert::success('Car Wash Booking','Car Wash booking updated successfully');
-        return redirect('car_wash_bookings')->with('success', 'Car details updated successfully');
+        if($request->input('assigned_to')== null && $request->input('amount')== null){
+            $car ->status =$request->input('status');
+            $car->update();
+            Alert::success('Car Wash Booking','Car Wash booking updated successfully');
+            return redirect('car_wash_bookings')->with('success', 'Car details updated successfully');
+        }
+        else{
+            $car ->assigned_to = $request->input('assigned_to');
+            $car ->status =$request->input('status');
+            $car ->amount= $request->input('amount');
+            $car->update();
+            Alert::success('Car Wash Booking','Car Wash booking updated successfully');
+            return redirect('car_wash_bookings')->with('success', 'Car details updated successfully');
+        }
+       
+      
     }
     
 }

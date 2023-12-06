@@ -20,12 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('laundry-receipt', function () {
-    return view('admin.invoice.laundry_receipt');
-});
-Route::get('carwash-receipt', function () {
-    return view('carwash_receipt');
-});
+
+
 
 Route::get('/carwash/{id}', [CarwashController::class, 'searchId']);
 Route::get('update_carwash/{id}', [CarwashController::class, 'Update_Carwash']);
@@ -37,13 +33,13 @@ Route::get('/download-pdf/{id}', [CarwashController::class, 'generatePdf'])->nam
 
 
 
-Route::post('/laundry_form',[LaundryController::class, 'laundry_form']);
+Route::post('/laundry_request',[LaundryController::class, 'laundrystore']);
 
 Route::get('/laundry/{id}', [LaundryController::class, 'searchId']);
 Route::get('update_laundry/{id}', [LaundryController::class, 'Update_Laundry']);
 Route::put('laundryupdate/{id}', [LaundryController::class, 'update']);
 
-Route::get('/download-pdf/{id}', [LaundryController::class, 'generatePdf'])->name('downloadPdf');
+Route::get('/print-pdf/{id}', [LaundryController::class, 'generatePdf'])->name('downloadPdf');
 
 
 // ========HomeController Routes=======
@@ -80,6 +76,7 @@ Route::get('/updatewashpoints/{id}', [HomeController::class, 'updateWashPoints']
 
 // ========LaundryController Routes=======
 Route::get('/laundry_request_form',[LaundryController::class, 'laundry_request_form']);
+Route::get('/LaundryBookList',[LaundryController::class, 'LaundryBookList']);
 
 Route::get('/laundry_price_list',[LaundryController::class, 'laundry_price']);
 Route::get('/search-box3',[LaundryController::class, 'laundry_price_list']);
@@ -98,6 +95,7 @@ Route::get('/add_car_wash_booking', [CarwashController::class, 'add_car_wash_boo
 Route::get('/car_wash_bookings', [CarwashController::class, 'car_wash_bookings']);
 Route::get('/car_wash_overview', [CarwashController::class, 'car_wash_overview']);
 Route::post('/carwash_store', [CarwashController::class, 'car_wash_store']);
+Route::put('/cancel_carwash/{id}', [CarwashController::class, 'Cancel_Booking']);
 // ========end CarwashController Routes=======
 
 

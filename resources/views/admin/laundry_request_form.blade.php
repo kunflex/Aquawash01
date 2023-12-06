@@ -18,8 +18,8 @@
                     <!-- ====Price List==== -->
                     <center><strong style="font-size:20px;">{{ __("Laundry Request Form") }}</strong><hr></center>
                     <div style="margin-top:25px;margin-bottom:15px;">
-                        <form id="previewForm" action="{{ url('laundry_form') }}" method="post">
-
+                        <form action="{{ url('laundry_request') }}" method="post">
+                            @csrf
                             <div style="display:inline-flex;gap:30px;width:100%;">
                                <!-- car_brand Address -->
                                 <div style="width:100%;">
@@ -44,9 +44,9 @@
                                 </div>
 
                                 <div  style="width:100%;">
-                                    <x-input-label for="Pick_up_time" :value="__('Pick up Time')" />
-                                    <input id="Pick_up_time" class="preview-input" type="time" name="Pick_up_time" :value="old('Pick_up_time')" required autofocus autocomplete="username" data-preview="#preview3"/>
-                                    <x-input-error :messages="$errors->get('Pick_up_time')" class="mt-2" />
+                                    <x-input-label for="pick_up_time" :value="__('Pick up Time')" />
+                                    <input id="pick_up_time" class="preview-input" type="time" name="pick_up_time" :value="old('pick_up_time')" required autofocus autocomplete="username" data-preview="#preview3"/>
+                                    <x-input-error :messages="$errors->get('pick_up_time')" class="mt-2" />
                                 </div>
 
                             </div>
@@ -90,10 +90,10 @@
                                     
                                         <div  style="width:100%;margin-top:20px;">
                                             <x-input-label for="itemSelect" :value="__('Select Laundry Item')" />
-                                            <select id="itemSelect" class="preview-input" type="text" name="itemSelect" :value="old('itemSelect')" required autofocus autocomplete="username"  data-preview="#preview13">
+                                            <select id="itemSelect1" class="preview-input" type="text" name="itemSelect[]" :value="old('itemSelect')" required autofocus autocomplete="username"  data-preview="#preview13">
                                                 <option value="---Select a Laundry Item  ---">---Select a Laundry Item  ---</option>
                                                 @foreach($price as $price)
-                                                <option value="{{$price->items}} cost ${{$price->price}}">
+                                                <option value="{{$price->id}}">
                                                     <tr>
                                                         <td>{{$price->quantity}}</td>
                                                         <td>{{$price->items}}</td>
@@ -107,7 +107,7 @@
 
                                         <div  style="width:100%;margin-top:20px; " id="quantityDiv">
                                             <x-input-label for="quantity" value="Quantity" />
-                                            <input id="quantity" class="preview-input" type="text" name="quantity" :value="old('quantity')" required autofocus autocomplete="username" data-preview="#preview7" />
+                                            <input id="quantity1" class="preview-input" type="text" name="quantity[]" :value="old('quantity')" required autofocus autocomplete="username" data-preview="#preview7" />
                                             <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
                                         </div>
                                     </div>
@@ -165,7 +165,7 @@
 
                             </div>
                                <br>
-                                <button class="preview-input" style="background-color:#0096FF;color:white;padding:10px;border-radius:6px;"><ion-icon name="send" style="margin-top:8px;margin-right:7px"></ion-icon>Preview Request</button>
+                                <button class="preview-input" style="background-color:#0096FF;color:white;padding:10px;border-radius:6px;"><ion-icon name="send" style="margin-top:8px;margin-right:7px"></ion-icon>Submit Request</button>
                             
                         </form>
                      </div>
@@ -265,8 +265,11 @@
             document.getElementById("laundry_invoice").value = "INVL" + generateRandomNumber().toString();
 
 </script>
+
 <!-- Add this script in your HTML file -->
 <script>
+    var currentTemplateIndex = 1;
+
     function closeClonedTemplate() {
         // Get the cloned template container
         var templateContainer = document.getElementById("templateContainer");
@@ -282,9 +285,20 @@
         var originalTemplate = document.getElementById("templateContainer");
         var clonedTemplate = originalTemplate.cloneNode(true);
 
-        // Clear the input values in the cloned template
+        // Increment the template index
+        currentTemplateIndex++;
+
+        // Update the IDs and names in the cloned template
         var inputs = clonedTemplate.querySelectorAll('input, select');
         inputs.forEach(function(input) {
+            var newId = input.id + currentTemplateIndex;
+            var newName = input.name + currentTemplateIndex;
+
+            // Update ID and name attributes
+            input.id = newId;
+            input.name = newName;
+
+            // Clear the input value
             input.value = '';
         });
 
