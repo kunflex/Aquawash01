@@ -59,7 +59,7 @@ To set up your PATH environment variable by auto detecting your php installed di
 - [DB_CONNECTION=mysql]
 - [DB_HOST=127.0.0.1]
 - [DB_PORT=3306]
-- [DB_DATABASE=aquawas]
+- [DB_DATABASE=aquawash]
 - [DB_USERNAME=root]
 - [DB_PASSWORD=]
 - [make sure to save changes if your vscode is not set to auto save]
