@@ -4,10 +4,10 @@
 ## Screenshots
 
 <img src="./public/assets/img/home.png" alt="Home" width="300">
-<img src="assets/img/signin.png" alt="Sign In" width="300">
-<img src="assets/img/signup.png" alt="Sign Up" width="300">
-<img src="assets/img/admin1.png" alt="Admin 1" width="300">
-<img src="assets/img/admin2.png" alt="Admin 2" width="300">
-<img src="assets/img/table.png" alt="Table" width="300">
-<img src="assets/img/form.png" alt="Form" width="300">
-<img src="assets/img/profile.png" alt="Profile" width="300">
+<img src="./public/assets/img/signin.png" alt="Sign In" width="100%">
+<img src="./public/assets/img/signup.png" alt="Sign Up" width="100%">
+<img src="./public/assets/img/admin1.png" alt="Admin 1" width="300">
+<img src="./public/assets/img/admin2.png" alt="Admin 2" width="300">
+<img src="./public/assets/img/table.png" alt="Table" width="300">
+<img src="./public/assets/img/form.png" alt="Form" width="300">
+<img src="./public/assets/img/profile.png" alt="Profile" width="300">
