@@ -3,7 +3,7 @@
 
 ## Screenshots
 
-<img src="assets/img/home.png" alt="Home" width="300">
+<img src="./public/assets/img/home.png" alt="Home" width="300">
 <img src="assets/img/signin.png" alt="Sign In" width="300">
 <img src="assets/img/signup.png" alt="Sign Up" width="300">
 <img src="assets/img/admin1.png" alt="Admin 1" width="300">
