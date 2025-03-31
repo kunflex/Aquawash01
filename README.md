@@ -1,18 +1,5 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-
-## Screenshots
-
-<img src="./public/assets/img/home.png" alt="Home" width="100%">
-<img src="./public/assets/img/signin.png" alt="Sign In" width="100%">
-<img src="./public/assets/img/signup.png" alt="Sign Up" width="100%">
-<img src="./public/assets/img/admin1.png" alt="Admin 1" width="100%">
-<img src="./public/assets/img/admin2.png" alt="Admin 2" width="100%">
-<img src="./public/assets/img/table.png" alt="Table" width="100%">
-<img src="./public/assets/img/form.png" alt="Form" width="100%">
-<img src="./public/assets/img/profile.png" alt="Profile" width="100%">
-
-
 ## Instructions On How To Run This Laravelx10 Project On Windows
 
 - [Make sure you have the Visual Studio Code or any code editor of your choice installed on your pc]
